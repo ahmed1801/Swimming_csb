@@ -1,0 +1,349 @@
+/* الخط الأساسي واتجاه الصفحة */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    direction: rtl;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* إعادة ضبط القواعد الأساسية */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* العناوين */
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+/* شريط التنقل */
+.navbar {
+    background-color: #007bff;
+    padding: 12px 0;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color:rgb(9, 238, 238);
+}
+
+/* الرسائل */
+.message {
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* الأزرار العامة */
+a.add-new,
+button.delete-all,
+.button {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 8px 6px 20px 6px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.add-new {
+    background: linear-gradient(to right, #28a745, #218838);
+    color: white;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+a.add-new:hover {
+    background-color: #218838;
+}
+
+button.delete-all {
+    background: linear-gradient(to right, #dc3545, #c82333);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+button.delete-all:hover {
+    background-color: #c82333;
+}
+
+/* أزرار الجدول */
+.button {
+    padding: 7px 12px;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.button.edit {
+    background-color: #007bff;
+}
+.button.edit:hover {
+    background-color: #0056b3;
+}
+.button.delete {
+    background-color: #dc3545;
+}
+.button.delete:hover {
+    background-color: #b02a37;
+}
+.button.view {
+    background-color: #28a745;
+}
+.button.view:hover {
+    background-color: #218838;
+}
+
+.btn-print, .btn-all {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.btn-print:hover, .btn-all:hover {
+    background-color: #218838;
+}
+.race-header {
+    background-color: #f0f4f8;
+    border: 1px solid #d1d9e6;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.race-date {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #444;
+}
+
+.race-header.highlighted {
+    border: 2px solid #28a745;
+    background-color: #e6fff1;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #28a74588;
+}
+
+
+a.add-new {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+a.add-new:hover {
+    background-color: #218838;
+}
+
+
+/* الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+thead tr {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    
+    text-align: center;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #f1f7ff;
+    cursor: default;
+}
+
+tbody tr.empty td {
+    font-style: italic;
+    color: #888;
+}
+
+/* النماذج */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* عرض مخصص للطباعة */
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .navbar, .add-new, .delete-all, .button, .message {
+        display: none;
+    }
+
+    table {
+        box-shadow: none;
+    }
+
+
+    .race-actions, .navbar, .filter-form, .btn, button, form button, select, option {
+            display: none !important;
+    }
+
+    .race-container {
+            page-break-after: always;
+            border: none;
+            box-shadow: none;
+    }
+
+    table {
+            page-break-inside: avoid;
+    }
+    img.club-logo {
+         display: none !important;
+    }
+}
+
+/* جعل الصفحة تعمل بشكل جيد على الشاشات الصغيرة */
+@media (max-width: 900px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        display: none;
+    }
+
+    tbody tr {
+        margin-bottom: 15px;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    tbody tr td {
+        text-align: left;
+        padding-right: 50%;
+        padding-left: 15px;
+        position: relative;
+        border-bottom: 1px solid #ddd;
+        font-size: 0.9rem;
+    }
+
+    tbody tr td:last-child {
+        border-bottom: 0;
+    }
+
+    tbody tr td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        font-weight: bold;
+        color: #007bff;
+        white-space: nowrap;
+    }
+}
